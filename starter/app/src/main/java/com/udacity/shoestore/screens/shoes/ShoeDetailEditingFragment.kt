@@ -33,16 +33,19 @@ class ShoeDetailEditingFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_shoe_detail_editing, container, false)
 
-        binding.shoe = shoe
+        with (binding) {
+            shoe = shoe
+            shoeDetailSaveButton.setOnClickListener {
+                binding.shoe?.let { shoe ->
+                    viewModel.addNewShoe(shoe)
+                }
+                findNavController().popBackStack()
 
-        binding.shoeDetailSaveButton.setOnClickListener {
-            binding.shoe?.let { shoe ->
-                viewModel.addNewShoe(shoe)
             }
-            findNavController().popBackStack()
-        }
-        binding.shoeDetailCancelButton.setOnClickListener {
-            findNavController().popBackStack()
+
+            shoeDetailCancelButton.setOnClickListener {
+                findNavController().popBackStack()
+            }
         }
         return binding.root
     }
