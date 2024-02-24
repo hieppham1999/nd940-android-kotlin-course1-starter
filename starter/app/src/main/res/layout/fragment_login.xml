@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".screens.login.LoginFragment">
 
+<!--    Use ConstraintLayout to create a layout that pin group button at bottom of the screen-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -19,12 +20,13 @@
             android:layout_height="wrap_content"
             android:text="@string/app_name_display"
             android:textAlignment="center"
-            android:textSize="48sp"
+            android:textSize="@dimen/app_name_text_size"
             app:layout_constraintBottom_toTopOf="@+id/text_edit_group"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
+<!--        a group of text edit in vertical axis-->
         <LinearLayout
             android:id="@+id/text_edit_group"
             android:layout_width="match_parent"
@@ -48,7 +50,7 @@
                 android:ems="10"
                 android:hint="@string/login_email_hint"
                 android:inputType="textEmailAddress"
-                android:minHeight="48dp" />
+                android:minHeight="@dimen/edit_text_min_height" />
 
             <TextView
                 android:id="@+id/textView"
@@ -63,10 +65,11 @@
                 android:ems="10"
                 android:hint="@string/login_password_hint"
                 android:inputType="textPassword"
-                android:minHeight="48dp"
+                android:minHeight="@dimen/edit_text_min_height"
                 android:autofillHints="" />
         </LinearLayout>
 
+<!--        create a layout that contains 2 buttons in vertical axis -->
         <LinearLayout
             android:id="@+id/button_group"
             android:layout_width="match_parent"

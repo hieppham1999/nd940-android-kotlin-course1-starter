@@ -10,7 +10,8 @@
             type="com.udacity.shoestore.models.Shoe" />
     </data>
 
-    <!-- TODO: Update blank fragment layout -->
+    <!--    use ConstraintLayout to pin screen title at top, the button at bottom and the text edits
+    are on the middle of the screen-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -36,7 +37,7 @@
             android:ems="10"
             android:hint="@string/shoe_name_text_edit_hint"
             android:inputType="text"
-            android:minHeight="48dp"
+            android:minHeight="@dimen/edit_text_min_height"
             android:text="@={shoe.name}"
             app:layout_constraintBottom_toTopOf="@+id/company_text_field"
             app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +52,7 @@
             android:ems="10"
             android:hint="@string/shoe_company_text_edit_hint"
             android:inputType="text"
-            android:minHeight="48dp"
+            android:minHeight="@dimen/edit_text_min_height"
             android:text="@={shoe.company}"
             app:layout_constraintBottom_toTopOf="@+id/shoe_size_text_field"
             app:layout_constraintEnd_toEndOf="parent"
@@ -66,7 +67,7 @@
             android:ems="10"
             android:hint="@string/shoe_size_text_edit_hint"
             android:inputType="number"
-            android:minHeight="48dp"
+            android:minHeight="@dimen/edit_text_min_height"
             android:text=""
             app:layout_constraintBottom_toTopOf="@+id/description_text_field"
             app:layout_constraintEnd_toEndOf="parent"
@@ -81,13 +82,15 @@
             android:ems="10"
             android:hint="@string/shoe_description_text_edit_hint"
             android:inputType="text"
-            android:minHeight="48dp"
+            android:minHeight="@dimen/edit_text_min_height"
             android:text="@={shoe.description}"
             app:layout_constraintBottom_toTopOf="@+id/group_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shoe_size_text_field" />
 
+<!--        create 2 buttons that take 50% screen width (include padding), standing next to each
+other in the horizontal axis-->
         <LinearLayout
             android:id="@+id/group_button"
             android:layout_width="0dp"
